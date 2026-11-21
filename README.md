@@ -39,42 +39,17 @@ LinkPay/
 
 ## Requirements
 
-- Node.js 24 or newer
+- Node.js 20 or newer
 - npm
-- Expo Go on a phone, or Android Studio emulator
-- A computer and phone on the same Wi-Fi network when testing on a physical phone
+- Web browser (Chrome, Edge, Firefox, Safari) OR Expo Go on a mobile phone / emulator
 
 ## 1. Start the backend
 
 Open a terminal:
 
 ```bash
-cd LinkPay/server
-```
-
-Install dependencies:
-
-```bash
+cd server
 npm install
-```
-
-Create your environment file:
-
-**Windows PowerShell**
-```powershell
-Copy-Item .env.example .env
-```
-
-**macOS / Linux**
-```bash
-cp .env.example .env
-```
-
-Open `.env` and change `JWT_SECRET` to a long random secret. Keep `.env` private.
-
-Start the API:
-
-```bash
 npm run dev
 ```
 
@@ -82,30 +57,22 @@ The API runs at `http://localhost:5000`. Test it by opening `http://localhost:50
 
 The JSON files in `server/data/` are created automatically if missing. Existing data is preserved when the server restarts.
 
-## 2. Configure the mobile app
+## 2. Start the mobile app in your Web Browser
 
 Open a second terminal:
 
 ```bash
-cd LinkPay/client
-npm install
+cd client
+npm run web
 ```
 
-Open `src/api.js` and set `API_BASE_URL`:
-
-- Android emulator: `http://10.0.2.2:5000/api`
-- iOS simulator: `http://localhost:5000/api`
-- Physical phone: `http://YOUR_COMPUTER_LAN_IP:5000/api`
-
-For a physical phone, find your computer's LAN IPv4 address with `ipconfig` (Windows) or `ifconfig` / `ip addr` (macOS/Linux). Make sure the phone and computer use the same Wi-Fi network and that your firewall permits port `5000`.
-
-Start Expo:
-
+Alternatively:
 ```bash
-npx expo start
+npm run start
 ```
+and press **`w`** in the terminal to open the app directly in your default web browser!
 
-Scan the QR code using Expo Go, or press `a` for an Android emulator.
+The app automatically connects to `http://localhost:5000/api` when accessed from the browser or iOS simulator, and `http://10.0.2.2:5000/api` when on an Android emulator.
 
 ## 3. Main features
 
