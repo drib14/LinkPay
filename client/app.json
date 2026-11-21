@@ -1,0 +1,24 @@
+{
+  "expo": {
+    "name": "LinkPay",
+    "slug": "linkpay",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "backgroundColor": "#F7F2EA"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.linkpay.wallet"
+    },
+    "web": {
+      "bundler": "metro"
+    }
+  }
+}
